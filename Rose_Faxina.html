@@ -510,72 +510,154 @@
             font-size: 14px;
         }
 
-        /* Services Section */
+        /* ANIMAÇÃO DE ENTRADA */
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* GRID DOS SERVIÇOS */
         .services {
-            padding: 100px 5%;
-            background: var(--white);
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 32px;
+            padding: 10px 0;
         }
 
+        /* CARD PREMIUM */
         .service-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(232, 180, 203, 0.2);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(232, 180, 203, 0.2);
-        }
-
-        .service-image {
-            height: 200px;
-            background: var(--gradient-2);
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: var(--deep-purple);
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease;
+            animation: fadeSlideUp .6s ease forwards;
+            opacity: 0;
         }
 
+        /* Hover */
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Borda superior com gradiente unificado */
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-1);
+        }
+
+        /* ÍCONE com gradiente */
+        .service-image {
+            font-size: 48px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+
+        /* CONTEÚDO */
         .service-content {
-            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-content h3 {
-            font-size: 22px;
             margin-bottom: 10px;
-            color: var(--text-dark);
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
         }
 
         .service-content p {
-            color: var(--text-light);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            line-height: 1.55;
+            color: #555;
         }
 
+        /* PREÇO */
         .service-price {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--deep-purple);
-            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 22px;
+            color: #222;
         }
 
-        .service-price span {
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--text-light);
+        /* BOTÃO COM O MESMO GRADIENTE */
+        .service-content .cta-button {
+            margin-top: auto;
+            background: var(--gradient-1);
+            color: #fff;
+            padding: 14px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: .5px;
+            transition: opacity .2s ease, transform .2s ease;
+        }
+
+        .service-content .cta-button:hover {
+            opacity: .85;
+            transform: scale(1.02);
+        }
+
+        /* PLANO MAIS VENDIDO */
+        .service-card.best-seller {
+            border: 2px solid #D4A5B5;
+        }
+
+        .service-card.best-seller::after {
+            content: "Mais Popular";
+            position: absolute;
+            top: 14px;
+            right: -40px;
+            background: var(--gradient-1);
+            color: #fff;
+            padding: 6px 50px;
+            font-size: 13px;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 22px;
+            }
+
+            .service-image {
+                font-size: 40px;
+            }
+        }
+        /* PC */
+        @media (min-width: 1200px) {
+            .services {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
         }
 
         /* App Download Section */
@@ -1227,168 +1309,104 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="planos">
+    <section class="services" id="servicos">
         <div class="section-header fade-in">
-            <h2>Planos de Limpeza</h2>
-            <p>Escolha o serviço ideal para sua casa!</p>
+            <h2>Nossos Serviços</h2>
+            <p>Oferecemos diversas opções de limpeza para atender suas necessidades</p>
         </div>
+
         <div class="services-grid">
 
+            <!-- Limpeza Básica -->
             <div class="service-card fade-in">
-                <div class="service-image"><i class="fas fa-soap"></i></div>
+                <div class="service-image">
+                    <i class="fas fa-home"></i>
+                </div>
                 <div class="service-content">
-                    <h3>🧼 Limpeza Básica</h3>
-                    <div class="service-price">R$ 150,00</div>
-                    <ul>
-                        <li>1 banheiro, até 2 quartos, sala e cozinha</li>
-                        <li>Limpeza geral dos cômodos</li>
-                        <li>Limpeza externa de armários, guarda-roupas e geladeira</li>
-                        <li>Limpeza do banheiro</li>
-                        <li>Organização básica</li>
-                    </ul>
-                    <strong>Não inclui:</strong>
-                    <ul>
-                        <li>Limpeza interna de armários, guarda-roupas ou geladeira</li>
-                        <li>Lavagem de louça, janelas, roupas</li>
-                        <li>Faxina pesada</li>
-                    </ul>
-                    <p><em>Indicado para quem quer apenas a limpeza do dia a dia.</em></p>
+                    <h3>Limpeza Básica</h3>
+                    <p>1 banheiro, até 2 quartos, sala e cozinha. Limpeza geral dos cômodos, limpeza externa de
+                        armários, guarda-roupas e geladeira, banheiro e organização básica.</p>
+                    <div class="service-price">R$ 150,00 <span>/ padrão</span></div>
+
+                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button"
+                        style="width:100%;text-align:center;display:inline-block;">
+                        Agendar
+                    </a>
                 </div>
             </div>
 
+            <!-- Limpeza Completa -->
             <div class="service-card fade-in">
-                <div class="service-image"><i class="fas fa-broom"></i></div>
+                <div class="service-image">
+                    <i class="fas fa-broom"></i>
+                </div>
                 <div class="service-content">
-                    <h3>🧽 Limpeza Completa (2+ Banheiros)</h3>
-                    <div class="service-price">R$ 180,00 <span>(a partir de)</span></div>
-                    <ul>
-                        <li>2 ou mais banheiros, 2 quartos ou mais, sala e cozinha</li>
-                        <li>Limpeza geral completa</li>
-                        <li>Limpeza de todos os banheiros</li>
-                        <li>Organização da casa</li>
-                        <li>Limpeza externa de móveis, armários e eletrodomésticos</li>
-                    </ul>
-                    <strong>Não inclui automaticamente:</strong>
-                    <ul>
-                        <li>Limpeza interna de armários, guarda-roupas ou geladeira</li>
-                        <li>Lavagem de janelas, roupas</li>
-                        <li>Faxina pesada</li>
-                    </ul>
-                    <p><em>O valor é maior porque mais banheiros exigem mais tempo e esforço.</em></p>
+                    <h3>Limpeza Completa (2+ Banheiros)</h3>
+                    <p>Limpeza geral completa, organização da casa, limpeza de todos os banheiros e limpeza externa de
+                        móveis e eletrodomésticos.</p>
+                    <div class="service-price">R$ 180,00 <span>/ a partir</span></div>
+
+                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button"
+                        style="width:100%;text-align:center;display:inline-block;">
+                        Agendar
+                    </a>
                 </div>
             </div>
 
+            <!-- Faxina Pesada -->
             <div class="service-card fade-in">
-                <div class="service-image"><i class="fas fa-spray-can"></i></div>
+                <div class="service-image">
+                    <i class="fas fa-soap"></i>
+                </div>
                 <div class="service-content">
-                    <h3>🧹 Faxina Pesada</h3>
+                    <h3>Faxina Pesada</h3>
+                    <p>Limpeza profunda, remoção de sujeira pesada, limpeza detalhada e organização completa. Pode
+                        incluir lavagem de janelas conforme combinado.</p>
                     <div class="service-price">A partir de R$ 180,00</div>
-                    <ul>
-                        <li>Limpezas profundas</li>
-                        <li>Casas com sujeira pesada</li>
-                    </ul>
-                    <strong>Pode incluir (conforme combinado):</strong>
-                    <ul>
-                        <li>Lavagem de janelas</li>
-                        <li>Limpeza detalhada</li>
-                        <li>Remoção de sujeira pesada</li>
-                        <li>Organização completa</li>
-                    </ul>
-                    <p><em>O valor varia conforme quantidade de janelas, tamanho do imóvel e serviços extras.</em></p>
+
+                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button"
+                        style="width:100%;text-align:center;display:inline-block;">
+                        Agendar
+                    </a>
                 </div>
             </div>
 
+            <!-- Lavagem e Passar Roupas -->
             <div class="service-card fade-in">
-                <div class="service-image"><i class="fas fa-tshirt"></i></div>
+                <div class="service-image">
+                    <i class="fas fa-tshirt"></i>
+                </div>
                 <div class="service-content">
-                    <h3>👕 Lavagem e/ou Passar Roupas (Serviço à Parte)</h3>
+                    <h3>Lavagem e/ou Passar Roupas</h3>
+                    <p>Serviço à parte. Inclui lavar e/ou passar roupas. Valor depende da quantidade e é combinado
+                        previamente.</p>
                     <div class="service-price">Preço a combinar</div>
-                    <ul>
-                        <li>Lavar roupas</li>
-                        <li>Passar roupas</li>
-                    </ul>
-                    <p><em>O valor depende da quantidade de roupas e só é realizado mediante combinação prévia.</em></p>
+
+                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button"
+                        style="width:100%;text-align:center;display:inline-block;">
+                        Agendar
+                    </a>
                 </div>
             </div>
 
+            <!-- Serviços Extras -->
             <div class="service-card fade-in">
-                <div class="service-image"><i class="fas fa-plus-circle"></i></div>
+                <div class="service-image">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
                 <div class="service-content">
-                    <h3>➕ Serviços Extras</h3>
+                    <h3>Serviços Extras</h3>
+                    <p>Limpeza interna de armários, guarda-roupas, geladeira, lavagem de janelas, lavar ou passar roupas
+                        e outros serviços fora do padrão.</p>
                     <div class="service-price">Preço a combinar</div>
-                    <ul>
-                        <li>Limpeza interna de armários, guarda-roupas ou geladeira</li>
-                        <li>Lavagem de janelas (quando não incluída na faxina pesada)</li>
-                        <li>Lavar ou passar roupas</li>
-                        <li>Qualquer serviço fora do padrão</li>
-                    </ul>
-                    <p><em>O valor é definido após conversa com o cliente.</em></p>
-                </div>
-            </div>
-        </div>
 
-    </section>
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-header fade-in">
-            <h2>O que Nossos Clientes Dizem</h2>
-            <p>Veja as experiências de quem já usou a Rose Limpeza</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card fade-in">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">A Rose Limpeza mudou minha rotina! Agora tenho mais tempo para minha família
-                    e chego em casa sempre com tudo limpinho. As profissionais são super atenciosas e cuidadosas.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MR</div>
-                    <div class="author-info">
-                        <h4>Maria Regina</h4>
-                        <p>Cliente há 6 meses</p>
-                    </div>
+                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button"
+                        style="width:100%;text-align:center;display:inline-block;">
+                        Agendar
+                    </a>
                 </div>
             </div>
-            <div class="testimonial-card fade-in">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">Uso o app para limpezas pós-aluguel dos meus imóveis no Airbnb. A
-                    praticidade é incrível e os hóspedes sempre elogiam a limpeza impecável. Super recomendo!</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JL</div>
-                    <div class="author-info">
-                        <h4>João Lucas</h4>
-                        <p>Anfitrião Airbnb</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="testimonial-text">Fiz a limpeza pós-obra e fiquei impressionada com o resultado. Removeu toda
-                    a poeira da construção e deixou o apartamento pronto para mudança. Valeu cada centavo!</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">AF</div>
-                    <div class="author-info">
-                        <h4>Ana Flávia</h4>
-                        <p>Cliente há 1 mês</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
