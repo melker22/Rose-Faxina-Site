@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rose Faxina - Faxina Profissional pelo App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -158,14 +161,21 @@
             right: -20%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
         }
 
         .hero-content {
@@ -182,7 +192,7 @@
             font-weight: 600;
             color: var(--deep-purple);
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .hero h1 {
@@ -195,7 +205,7 @@
 
         .hero h1 span {
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero p {
@@ -220,7 +230,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -229,7 +239,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .btn-secondary {
@@ -274,13 +284,20 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         .mascot {
             font-size: 200px;
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
         }
 
         .floating-icons {
@@ -294,18 +311,44 @@
             background: white;
             padding: 15px;
             border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             animation: float-icon 4s ease-in-out infinite;
         }
 
-        .float-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .float-icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
-        .float-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 2s; }
-        .float-icon:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 3s; }
+        .float-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-icon:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .float-icon:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .float-icon:nth-child(4) {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
 
         @keyframes float-icon {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
         }
 
         /* Features Section */
@@ -485,7 +528,7 @@
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(232, 180, 203, 0.2);
         }
@@ -589,12 +632,12 @@
             gap: 10px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .app-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         .app-mockup {
@@ -610,7 +653,7 @@
             height: 560px;
             background: white;
             border-radius: 40px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
             padding: 15px;
             position: relative;
             transform: rotate(-5deg);
@@ -618,8 +661,15 @@
         }
 
         @keyframes phone-float {
-            0%, 100% { transform: rotate(-5deg) translateY(0); }
-            50% { transform: rotate(-5deg) translateY(-15px); }
+
+            0%,
+            100% {
+                transform: rotate(-5deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(-5deg) translateY(-15px);
+            }
         }
 
         .phone-screen {
@@ -665,7 +715,7 @@
             background: var(--white);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(232, 180, 203, 0.2);
             position: relative;
         }
@@ -740,7 +790,7 @@
             background: white;
             border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
 
         .contact-info {
@@ -780,7 +830,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -938,7 +988,7 @@
         .social-links a {
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -956,7 +1006,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 13px;
             color: #666;
         }
@@ -1061,6 +1111,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -1092,7 +1143,8 @@
                 <i class="fas fa-star"></i> Profissionais Verificados
             </div>
             <h1>Sua Casa <span>Brilhando</span> em Poucos Cliques</h1>
-            <p>Conectamos você aos melhores profissionais de limpeza da sua região. Agende pelo app, pague com segurança e aproveite seu tempo livre enquanto cuidamos da sua casa.</p>
+            <p>Conectamos você aos melhores profissionais de limpeza da sua região. Agende pelo app, pague com segurança
+                e aproveite seu tempo livre enquanto cuidamos da sua casa.</p>
             <div class="hero-buttons">
                 <a href="#servicos" class="btn-secondary">Conhecer Serviços</a>
             </div>
@@ -1114,7 +1166,8 @@
     <section class="features" id="recursos">
         <div class="section-header fade-in">
             <h2>Por que Escolher a Rose?</h2>
-            <p>Oferecemos a melhor experiência em serviços de limpeza doméstica, com profissionais treinados e tecnologia de ponta.</p>
+            <p>Oferecemos a melhor experiência em serviços de limpeza doméstica, com profissionais treinados e
+                tecnologia de ponta.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card fade-in">
@@ -1174,49 +1227,107 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="servicos">
+    <section class="services" id="planos">
         <div class="section-header fade-in">
-            <h2>Nossos Serviços</h2>
-            <p>Oferecemos diversas opções de limpeza para atender suas necessidades</p>
+            <h2>Planos de Limpeza</h2>
+            <p>Escolha o serviço ideal para sua casa!</p>
         </div>
         <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-image">
-                    <i class="fas fa-home"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Limpeza Padrão</h3>
-                    <p>Ideal para manutenção semanal da sua casa. Inclui quartos, banheiros, cozinha e áreas comuns.</p>
-                    <div class="service-price">R$ 120 <span>/ 4 horas</span></div>
-                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button" style="width: 100%; text-align: center; display: inline-block;">Agendar</a>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image">
-                    <i class="fas fa-broom"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Limpeza Pesada</h3>
-                    <p>Para aquela faxina completa! Limpeza profunda de todos os ambientes, incluindo áreas de difícil acesso.</p>
-                    <div class="service-price">R$ 200 <span>/ 8 horas</span></div>
-                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button" style="width: 100%; text-align: center; display: inline-block;">Agendar</a>
-                </div>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-image">
-                    <i class="fas fa-paint-roller"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Pós-Obra</h3>
-                    <p>Remoção de resíduos de construção, poeira e sujeira pesada após reformas.</p>
-                    <div class="service-price">R$ 280 <span>/ a partir</span></div>
-                    <a href="https://wa.me/5564999601220" target="_blank" class="cta-button" style="width: 100%; text-align: center; display: inline-block;">Agendar</a>
-                </div>
-            </div>
-            
-        </div>
-    </section>
 
+            <div class="service-card fade-in">
+                <div class="service-image"><i class="fas fa-soap"></i></div>
+                <div class="service-content">
+                    <h3>🧼 Limpeza Básica</h3>
+                    <div class="service-price">R$ 150,00</div>
+                    <ul>
+                        <li>1 banheiro, até 2 quartos, sala e cozinha</li>
+                        <li>Limpeza geral dos cômodos</li>
+                        <li>Limpeza externa de armários, guarda-roupas e geladeira</li>
+                        <li>Limpeza do banheiro</li>
+                        <li>Organização básica</li>
+                    </ul>
+                    <strong>Não inclui:</strong>
+                    <ul>
+                        <li>Limpeza interna de armários, guarda-roupas ou geladeira</li>
+                        <li>Lavagem de louça, janelas, roupas</li>
+                        <li>Faxina pesada</li>
+                    </ul>
+                    <p><em>Indicado para quem quer apenas a limpeza do dia a dia.</em></p>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-image"><i class="fas fa-broom"></i></div>
+                <div class="service-content">
+                    <h3>🧽 Limpeza Completa (2+ Banheiros)</h3>
+                    <div class="service-price">R$ 180,00 <span>(a partir de)</span></div>
+                    <ul>
+                        <li>2 ou mais banheiros, 2 quartos ou mais, sala e cozinha</li>
+                        <li>Limpeza geral completa</li>
+                        <li>Limpeza de todos os banheiros</li>
+                        <li>Organização da casa</li>
+                        <li>Limpeza externa de móveis, armários e eletrodomésticos</li>
+                    </ul>
+                    <strong>Não inclui automaticamente:</strong>
+                    <ul>
+                        <li>Limpeza interna de armários, guarda-roupas ou geladeira</li>
+                        <li>Lavagem de janelas, roupas</li>
+                        <li>Faxina pesada</li>
+                    </ul>
+                    <p><em>O valor é maior porque mais banheiros exigem mais tempo e esforço.</em></p>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-image"><i class="fas fa-spray-can"></i></div>
+                <div class="service-content">
+                    <h3>🧹 Faxina Pesada</h3>
+                    <div class="service-price">A partir de R$ 180,00</div>
+                    <ul>
+                        <li>Limpezas profundas</li>
+                        <li>Casas com sujeira pesada</li>
+                    </ul>
+                    <strong>Pode incluir (conforme combinado):</strong>
+                    <ul>
+                        <li>Lavagem de janelas</li>
+                        <li>Limpeza detalhada</li>
+                        <li>Remoção de sujeira pesada</li>
+                        <li>Organização completa</li>
+                    </ul>
+                    <p><em>O valor varia conforme quantidade de janelas, tamanho do imóvel e serviços extras.</em></p>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-image"><i class="fas fa-tshirt"></i></div>
+                <div class="service-content">
+                    <h3>👕 Lavagem e/ou Passar Roupas (Serviço à Parte)</h3>
+                    <div class="service-price">Preço a combinar</div>
+                    <ul>
+                        <li>Lavar roupas</li>
+                        <li>Passar roupas</li>
+                    </ul>
+                    <p><em>O valor depende da quantidade de roupas e só é realizado mediante combinação prévia.</em></p>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-image"><i class="fas fa-plus-circle"></i></div>
+                <div class="service-content">
+                    <h3>➕ Serviços Extras</h3>
+                    <div class="service-price">Preço a combinar</div>
+                    <ul>
+                        <li>Limpeza interna de armários, guarda-roupas ou geladeira</li>
+                        <li>Lavagem de janelas (quando não incluída na faxina pesada)</li>
+                        <li>Lavar ou passar roupas</li>
+                        <li>Qualquer serviço fora do padrão</li>
+                    </ul>
+                    <p><em>O valor é definido após conversa com o cliente.</em></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="section-header fade-in">
@@ -1232,7 +1343,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">A Rose Limpeza mudou minha rotina! Agora tenho mais tempo para minha família e chego em casa sempre com tudo limpinho. As profissionais são super atenciosas e cuidadosas.</p>
+                <p class="testimonial-text">A Rose Limpeza mudou minha rotina! Agora tenho mais tempo para minha família
+                    e chego em casa sempre com tudo limpinho. As profissionais são super atenciosas e cuidadosas.</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">MR</div>
                     <div class="author-info">
@@ -1249,7 +1361,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">Uso o app para limpezas pós-aluguel dos meus imóveis no Airbnb. A praticidade é incrível e os hóspedes sempre elogiam a limpeza impecável. Super recomendo!</p>
+                <p class="testimonial-text">Uso o app para limpezas pós-aluguel dos meus imóveis no Airbnb. A
+                    praticidade é incrível e os hóspedes sempre elogiam a limpeza impecável. Super recomendo!</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">JL</div>
                     <div class="author-info">
@@ -1266,7 +1379,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p class="testimonial-text">Fiz a limpeza pós-obra e fiquei impressionada com o resultado. Removeu toda a poeira da construção e deixou o apartamento pronto para mudança. Valeu cada centavo!</p>
+                <p class="testimonial-text">Fiz a limpeza pós-obra e fiquei impressionada com o resultado. Removeu toda
+                    a poeira da construção e deixou o apartamento pronto para mudança. Valeu cada centavo!</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">AF</div>
                     <div class="author-info">
@@ -1287,7 +1401,8 @@
         <div class="contact-container fade-in">
             <div class="contact-info">
                 <h2>Vamos Conversar</h2>
-                <p>Estamos aqui para ajudar você a manter sua casa sempre limpa e organizada. Entre em contato pelos nossos canais de atendimento.</p>
+                <p>Estamos aqui para ajudar você a manter sua casa sempre limpa e organizada. Entre em contato pelos
+                    nossos canais de atendimento.</p>
                 <div class="contact-methods">
                     <div class="contact-method">
                         <div class="contact-icon">
@@ -1319,7 +1434,8 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');">
+                <form
+                    onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');">
                     <div class="form-group">
                         <label for="name">Nome Completo</label>
                         <input type="text" id="name" name="name" required placeholder="Digite seu nome">
@@ -1357,10 +1473,12 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Rose Limpeza</h3>
-                <p>Conectando você aos melhores profissionais de limpeza da sua região. Tecnologia, praticidade e qualidade em um só lugar.</p>
+                <p>Conectando você aos melhores profissionais de limpeza da sua região. Tecnologia, praticidade e
+                    qualidade em um só lugar.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/rosefaxina.servicos/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61582200557232"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61582200557232"><i
+                            class="fab fa-facebook-f"></i></a>
                     <a href="https://wa.me/5564999601220" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -1391,7 +1509,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Rose Limpeza. Todos os direitos reservados. Desenvolvido com <i class="fas fa-heart" style="color: var(--primary-pink);"></i></p>
+            <p>&copy; 2024 Rose Limpeza. Todos os direitos reservados. Desenvolvido com <i class="fas fa-heart"
+                    style="color: var(--primary-pink);"></i></p>
         </div>
     </footer>
 
@@ -1402,7 +1521,7 @@
 
     <script>
         // Navbar scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 navbar.style.padding = '15px 5%';
@@ -1433,7 +1552,7 @@
             rootMargin: "0px 0px -50px 0px"
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -1446,7 +1565,7 @@
         });
 
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
             navLinks.style.position = 'absolute';
@@ -1460,4 +1579,5 @@
         });
     </script>
 </body>
+
 </html>
