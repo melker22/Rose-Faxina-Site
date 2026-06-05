@@ -2,7 +2,7 @@
 
 Cada **push na branch `main`** que altere `index.html` ou `favicon.png` envia os arquivos para **public_html** na HostGator usando FTP. Você não precisa mais subir manualmente pelo cPanel.
 
-Workflow: `.github/workflows/deploy-hostgator.yml`
+Workflow: `.github/workflows/deploy-hostgator.yml` (actions com runtime Node.js 24: `checkout@v6`, `FTP-Deploy-Action@v4.4.0`)
 
 ---
 
