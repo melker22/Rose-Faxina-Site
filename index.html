@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Rose Faxina - Faxina Profissional pelo App</title>
     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <link rel="apple-touch-icon" href="favicon.png?v=2">
@@ -33,6 +33,10 @@
             --gradient-2: linear-gradient(135deg, #F5E6E8 0%, #E8B4CB 100%);
         }
 
+        html {
+            scroll-padding-top: 88px;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
@@ -40,15 +44,26 @@
             background: var(--white);
         }
 
+        img,
+        video,
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             padding: 20px 5%;
+            padding-top: max(20px, env(safe-area-inset-top));
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -56,10 +71,19 @@
             transition: all 0.3s ease;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+            min-width: 0;
+            flex-shrink: 1;
         }
 
         .logo-icon {
@@ -140,9 +164,18 @@
 
         .mobile-menu {
             display: none;
-            font-size: 24px;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            font-size: 22px;
             color: var(--deep-purple);
             cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background: var(--light-pink);
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Hero Section */
@@ -789,7 +822,7 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
@@ -866,6 +899,7 @@
         }
 
         .contact-container {
+            width: 100%;
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
@@ -968,13 +1002,16 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
+            max-width: 100%;
             padding: 15px;
             border: 2px solid #E8E8E8;
             border-radius: 12px;
             font-family: 'Poppins', sans-serif;
-            font-size: 14px;
+            font-size: 16px;
             transition: all 0.3s ease;
             background: var(--white);
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .form-group input:focus,
@@ -1065,8 +1102,8 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0px;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+            gap: 30px;
             margin-bottom: 40px;
         }
 
@@ -1168,6 +1205,10 @@
 
         /* Responsive */
         @media (max-width: 968px) {
+            html {
+                scroll-padding-top: 76px;
+            }
+
             .hero-image {
                 display: none;
             }
@@ -1183,14 +1224,15 @@
 
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 0;
             }
 
             .contact-info {
-                padding: 40px;
+                padding: 36px 28px;
             }
 
             .contact-form {
-                padding: 40px;
+                padding: 36px 28px;
             }
 
             .step:not(:last-child)::after {
@@ -1204,26 +1246,203 @@
         }
 
         @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 68px;
+            }
+
+            nav {
+                padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+                padding-top: max(10px, env(safe-area-inset-top));
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 20px;
+                border-radius: 12px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
             .nav-links {
+                display: none;
+                position: fixed;
+                top: calc(62px + env(safe-area-inset-top, 0px));
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                list-style: none;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                padding: 8px 16px 16px;
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+                border-top: 1px solid rgba(232, 180, 203, 0.35);
+                z-index: 999;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 4px;
+                font-size: 16px;
+                border-bottom: 1px solid rgba(232, 180, 203, 0.25);
+            }
+
+            .nav-links li:last-child a {
+                border-bottom: none;
+            }
+
+            .nav-cta .cta-label {
                 display: none;
             }
 
+            .nav-cta {
+                padding: 0;
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                border-radius: 12px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+            }
+
+            .nav-actions {
+                gap: 8px;
+            }
+
             .mobile-menu {
-                display: block;
+                display: inline-flex;
+            }
+
+            .hero {
+                padding: 100px max(16px, env(safe-area-inset-right)) 60px max(16px, env(safe-area-inset-left));
+                min-height: auto;
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: clamp(28px, 8vw, 36px);
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .features,
+            .how-it-works,
+            .services,
+            .testimonials,
+            .contact {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .section-header {
+                margin-bottom: 40px;
             }
 
             .section-header h2 {
-                font-size: 32px;
+                font-size: clamp(26px, 7vw, 32px);
+            }
+
+            .section-header p {
+                font-size: 15px;
             }
 
             .features-grid,
             .services-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .services {
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .service-card.best-seller::after {
+                font-size: 11px;
+                padding: 5px 44px;
+                top: 12px;
+                right: -44px;
+            }
+
+            .contact-container {
+                border-radius: 20px;
+            }
+
+            .contact-info h2 {
+                font-size: 28px;
+            }
+
+            .contact-info p {
+                font-size: 15px;
+                margin-bottom: 28px;
+            }
+
+            .contact-method {
+                gap: 14px;
+            }
+
+            .contact-method div p,
+            .contact-method div p a {
+                font-size: 14px;
+                word-break: break-word;
+            }
+
+            .contact-form {
+                padding: 28px 20px;
+            }
+
+            .form-group {
+                margin-bottom: 18px;
+            }
+
+            .submit-btn {
+                padding: 16px 24px;
+            }
+
+            .testimonial-card {
+                padding: 28px 24px;
+            }
+
+            footer {
+                padding: 48px max(16px, env(safe-area-inset-left)) 24px max(16px, env(safe-area-inset-right));
+            }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                font-size: 26px;
+                bottom: max(20px, env(safe-area-inset-bottom));
+                right: max(16px, env(safe-area-inset-right));
+            }
+        }
+
+        @media (max-width: 380px) {
+            .logo-text {
+                font-size: 17px;
             }
         }
 
@@ -1251,17 +1470,21 @@
             </div>
             <span class="logo-text">Rose Faxina</span>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#como-funciona">Como Funciona</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
-        <a href="https://wa.me/5564999601220" target="_blank" class="cta-button">
-            <i class="fab fa-whatsapp"></i> Agendar Agora
-        </a>
-        <div class="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <a href="https://wa.me/5564999601220" target="_blank" class="cta-button nav-cta"
+                aria-label="Agendar pelo WhatsApp">
+                <i class="fab fa-whatsapp"></i> <span class="cta-label">Agendar Agora</span>
+            </a>
+            <button type="button" class="mobile-menu" id="mobile-menu" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -1598,21 +1821,38 @@
         // Navbar scroll effect
         window.addEventListener('scroll', function () {
             const navbar = document.getElementById('navbar');
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
             if (window.scrollY > 50) {
-                navbar.style.padding = '15px 5%';
                 navbar.style.boxShadow = '0 2px 30px rgba(232, 180, 203, 0.3)';
+                if (!isMobile) {
+                    navbar.style.paddingTop = '15px';
+                    navbar.style.paddingBottom = '15px';
+                }
             } else {
-                navbar.style.padding = '20px 5%';
                 navbar.style.boxShadow = '0 2px 20px rgba(232, 180, 203, 0.2)';
+                if (!isMobile) {
+                    navbar.style.paddingTop = '';
+                    navbar.style.paddingBottom = '';
+                }
             }
         });
 
-        // Smooth scroll
+        // Smooth scroll + fechar menu mobile ao navegar
+        const navLinks = document.getElementById('nav-links');
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+
+        function closeMobileMenu() {
+            navLinks.classList.remove('open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
+                    closeMobileMenu();
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -1702,17 +1942,16 @@
         })();
 
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function () {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'white';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.padding = '20px';
-            navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+        mobileMenuBtn.addEventListener('click', function () {
+            const isOpen = navLinks.classList.toggle('open');
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            mobileMenuBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.matchMedia('(min-width: 769px)').matches) {
+                closeMobileMenu();
+            }
         });
     </script>
 </body>
