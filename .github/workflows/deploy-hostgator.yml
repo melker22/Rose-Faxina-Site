@@ -1,0 +1,45 @@
+# Publica index.html e favicon.png na HostGator (public_html) via FTP a cada push na main.
+#
+# Configure no GitHub (Settings → Secrets and variables → Actions):
+#   FTP_SERVER   = ftp.rosefaxina.com
+#   FTP_USERNAME = deploy@rosefaxina.com
+#   FTP_PASSWORD = senha da conta FTP (nunca commitar)
+
+name: Deploy to HostGator (FTP)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - favicon.png
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy site files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
+          local-dir: ./
+          # Conta deploy@rosefaxina.com já aponta para public_html
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git/**
+            **/.github/**
+            **/.cursor/**
+            **/.vscode/**
+            README.md
+            COMO-TESTAR-FORMULARIO.md
+            DEPLOY-AUTOMATICO.md
+            .nojekyll

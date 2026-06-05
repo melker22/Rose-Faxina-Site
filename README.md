@@ -2,9 +2,9 @@
 
 Landing page estática da **Rose Faxina**, serviço de faxina e limpeza doméstica profissional em **Mineiros (GO)**. O site apresenta os serviços, diferenciais, fluxo de agendamento e canais de contato, com foco em conversão via **WhatsApp** e formulário de e-mail.
 
-**Site no ar:** [melker22.github.io/Rose-Faxina-Site](https://melker22.github.io/Rose-Faxina-Site/)
+**Site em produção:** [rosefaxina.com.br](https://rosefaxina.com.br)
 
-[![Site](https://img.shields.io/website?url=https%3A%2F%2Fmelker22.github.io%2FRose-Faxina-Site%2F&label=site%20online)](https://melker22.github.io/Rose-Faxina-Site/)
+**Deploy automático:** push na `main` → FTP HostGator — veja [DEPLOY-AUTOMATICO.md](DEPLOY-AUTOMATICO.md)
 [![GitHub](https://img.shields.io/badge/GitHub-melker22%2FRose--Faxina--Site-181717?logo=github)](https://github.com/melker22/Rose-Faxina-Site)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
@@ -107,13 +107,20 @@ Todo o estilo e o script estão no próprio `index.html`, o que facilita deploy 
 
 ## Deploy (GitHub Pages)
 
-O repositório usa **`index.html`** na raiz, que é o arquivo padrão do GitHub Pages.
+O repositório usa **`index.html`** na raiz e o workflow `.github/workflows/deploy-pages.yml`.
 
-1. Em **Settings → Pages**, escolha a branch `main` e a pasta `/ (root)`.
-2. Faça push das alterações; em alguns minutos o site ficará disponível em:  
-   **https://melker22.github.io/Rose-Faxina-Site/**
+1. Faça push na branch `main`.
+2. No GitHub: **Settings → Pages → Build and deployment → Source:** escolha **GitHub Actions**.
+3. Em **Actions**, confira se o job “Deploy GitHub Pages” terminou com sucesso.
+4. O site ficará em: **https://melker22.github.io/Rose-Faxina-Site/**
 
-Alternativas: Netlify, Vercel, Cloudflare Pages ou qualquer hospedagem que sirva arquivos estáticos.
+Se a URL retornar 404, o Pages ainda não foi ativado ou o workflow não rodou — veja [COMO-TESTAR-FORMULARIO.md](COMO-TESTAR-FORMULARIO.md).
+
+**Formulário:** antes do primeiro envio real, ative o link que o FormSubmit manda para `rose.faxina.contato@gmail.com` (detalhes no guia acima).
+
+**Produção (HostGator):** configure os secrets FTP e use o workflow `deploy-hostgator.yml` — guia completo em [DEPLOY-AUTOMATICO.md](DEPLOY-AUTOMATICO.md).
+
+Alternativas: upload manual no cPanel, Netlify, Vercel ou Cloudflare Pages.
 
 ---
 
